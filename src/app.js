@@ -19,14 +19,15 @@ const store = configureStore();
 // store.dispatch(addExpense({ description: 'Rent', amount: 109500}));
 // store.dispatch(addExpense({ description: 'Coffee', amount: 900}));
 
-//store.dispatch(setTextFilter('water'));
+// store.dispatch(setTextFilter('water'));
 
 
 // const state = store.getState();
 // const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-//console.log(visibleExpenses);
+// console.log(visibleExpenses);
 
-//console.log (store.getState());
+// console.log (store.getState());
+// console.log('test');
 
 const jsx = (
     <Provider store={store}>
