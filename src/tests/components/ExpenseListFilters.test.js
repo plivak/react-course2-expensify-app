@@ -57,7 +57,7 @@ test('should sort by date', () => {
 });
 
 //should sort by smount
-test('should sort by smount', () => {
+test('should sort by amount', () => {
     const value = 'amount';
     wrapper.find('select').simulate('change', {
         target: { value }
@@ -65,6 +65,7 @@ test('should sort by smount', () => {
     expect(sortByAmount).toHaveBeenCalled();
 
 });
+
 //should handle date changes
 test('should handle date changes', () => {
     const startDate= moment(0).add(4, 'years')
@@ -73,6 +74,7 @@ test('should handle date changes', () => {
     expect(setStartDate).toHaveBeenLastCalledWith(startDate);
     expect(setEndDate).toHaveBeenLastCalledWith(endDate);
 });
+
 //should handle date focus changes
 test('should handle date focus changes', () => {
     const calendarFocused = 'endDate';
