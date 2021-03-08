@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render login page correctly 1`] = `
+<div
+  className="box-layout"
+>
+  <div
+    className="box-layout__box"
+  >
+    <h1>
+      Retire and Chill
+    </h1>
+    <p>
+      Solve Your Retirement.
+    </p>
+    <p>
+      <button
+        className="button"
+      >
+        Login
+      </button>
+    </p>
+  </div>
+</div>
+`;

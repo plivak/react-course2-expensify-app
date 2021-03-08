@@ -1,49 +1,34 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {Router, Route, Switch, Link, NavLink} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
 import AboutPage from '../components/About';
-import LoginPage from '../components/LoginPage';
 import AddExpensePage from '../components/AddExpensePage';
 import EditExpensePage from '../components/EditExpensePage';
 import notFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
+import LoginPage from '../components/LoginPage';
+import createMockStore from 'redux-mock-store';
+import PrivateRoute from './PrivateRoute';
 
-
-
+export const history = createHistory();
 
 // These are all placeholders for components that haven't been defined yet
-const CreateAccountPage = () => (
-    <div>
-        <p>
-            This is from my createAccount page
-        </p>
-    </div>
-
-);
-
-const ResultsPage = () => (
-    <div>
-        <p>
-            This is from my Results page
-        </p>
-    </div>
-
-);
 
 const AppRouter = () => (
-    <BrowserRouter>
+    <Router history={history}>
     <div>
         <Header />
         <Switch>
-            <Route path="/" component ={ExpenseDashboardPage}  exact={true}/>
+            <Route path="/" component ={LoginPage} exact={true}/>
+            <PrivateRoute path="/dashboard" component ={ExpenseDashboardPage} />
+            <PrivateRoute path="/create" component ={AddExpensePage} />
+            <PrivateRoute path="/edit/:id" component ={EditExpensePage} />
             <Route path="/about" component ={AboutPage} />
-            <Route path="/create" component ={AddExpensePage} />
-            <Route path="/login" component ={LoginPage} />
-            <Route path="/edit/:id" component ={EditExpensePage} />
             <Route component ={notFoundPage} />
         </Switch>
     </div>
-    </BrowserRouter>
+    </Router>
 );
 
 export default AppRouter;
