@@ -23,18 +23,20 @@
   
   // Button
   .button {
-    background: $purple;
+    background: $blue;
     border: none;
-    border-bottom: .3rem solid darken($purple, 10%);
     color: white;
     font-weight: 300;
     font-size: $font-size-large;
     padding: $s-size;
+    text-decoration: none;
+    line-height: 1;
   }
   
   .button--link {
     background: none;
-    border: none;
-    color: $off-white;
-    padding: 0;
+  }
+
+  .button--secondary {
+    background: #888;
   }
